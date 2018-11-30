@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+app-root {
+    color: reed;
+font-family: Georgia, 'Times New Roman', Times, serif;
+margin: auto;
+
+}
+.nav li a {
+
+font-size: 22px;
+font-weight: bolder;
+text-decoration: none;
+
+}

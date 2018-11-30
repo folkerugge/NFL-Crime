@@ -6,15 +6,16 @@
       <div class='card-body'>
           <div class='row'>
               <div class='col-md-2'> 
-                  <h5>Filter:<input type="text" [(ngModel)]='filterBy'></h5>
+                  <h5>Filter by crime: <input type="text" [(ngModel)]='filterBy'></h5>
               </div>         
           </div>     
       </div>
-
-      <table class='table-responsive' style="max-height: 100%;margin: 10px;" *ngIf='_crimes'>
+    </div>
+    <div id="list">
+          <table class='table-responsive' style="max-height: 100%;margin: 10px;" *ngIf='_crimes'>
           <thead> 
               <tr>
-                  <th style="width: 300px">Category:</th><th style="width: 150px">Assualt count:</th>
+                  <th style="width: 300px">Category:</th><th style="width: 150px">Arrest count:</th>
               </tr>
           </thead>
           <tbody> 
@@ -23,5 +24,5 @@
               </tr>
           </tbody>
       </table>
-  </div>
+    </div>
 </div>

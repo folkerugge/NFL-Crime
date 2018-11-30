@@ -10,8 +10,30 @@ import { ITopTeamsInterface } from './top-teams.interface';
 export class TopTeamsComponent implements OnInit {
   _crimes: ITopTeamsInterface[];
   _filteredCrimes: ITopTeamsInterface[];
+  _filterBy: string;
 
   constructor(private _httpClient: HttpClient) {}
+
+  public get filterBy(): string {
+    return this._filterBy;
+}
+
+  public set filterBy(value: string) {
+    this._filterBy = value;
+    this._filteredCrimes = (this.filterBy ? this.doFiltering(this.filterBy) : this._crimes);
+}
+
+  doFiltering(filterBy: string): ITopTeamsInterface[]{ 
+    let filteredList: ITopTeamsInterface[];
+
+    if (this._crimes && this._crimes.length){
+        filterBy = filterBy.toLocaleLowerCase();
+        let x = this._crimes;
+        filteredList = this._crimes.filter((crime: ITopTeamsInterface) => 
+        crime.Team.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    }
+    return filteredList;
+} 
 
   ngOnInit(){
     this._httpClient.get('http://NflArrest.com/api/v1/crime/topTeams/Drugs')

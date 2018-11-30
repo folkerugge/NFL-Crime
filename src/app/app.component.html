@@ -1,18 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class='nav'>
   <h1>
     {{ title }}
   </h1>
-</div>
+
 <div class='container'>
-  <div><button>Top Crimes</button></div>  <div><button>Top Players for Crime</button></div>  <div><button>Top Teams for Crime</button></div>
-
+  <ul class='nav' style="list-style: none">
+    <li><a routerLink='/home'>Top Crimes</a></li>
+    <li><a routerLink='/topplayers'>Top Players for Crime</a></li>
+    <li><a routerLink='/topteams'>Top Teams for Crime</a></li>
+  </ul>
 </div>
 
-
-
-<!--
-<app-top-crimes></app-top-crimes>
-<app-top-players></app-top-players>
-<app-top-teams></app-top-teams>
---><router-outlet></router-outlet>
+<router-outlet></router-outlet>
+</div>

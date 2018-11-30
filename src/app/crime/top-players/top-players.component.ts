@@ -14,10 +14,13 @@ export class TopPlayersComponent implements OnInit {
 
   constructor(private _httpClient: HttpClient) { }
 
+  public get filterBy(): string {
+    return this._filterBy;
+}
+
   public set filterBy(value: string) {
     this._filterBy = value;
     this._filteredCrimes = (this.filterBy ? this.doFiltering(this.filterBy) : this._crimes);
-    let x = this._filteredCrimes;
 }
 
 doFiltering(filterBy: string): ITopPlayersInterface[]{ 
@@ -25,7 +28,6 @@ doFiltering(filterBy: string): ITopPlayersInterface[]{
 
     if (this._crimes && this._crimes.length){
         filterBy = filterBy.toLocaleLowerCase();
-        let x = this._crimes;
         filteredList = this._crimes.filter((crime: ITopPlayersInterface) => 
         crime.Name.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }

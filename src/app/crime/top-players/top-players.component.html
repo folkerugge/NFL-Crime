@@ -6,7 +6,7 @@
       <div class='card-body'>
           <div class='row'>
               <div class='col-md-2'> 
-                  <h5>Filter:<input type="text" [(ngModel)]='filterBy'></h5>
+                  <h5>Filter by name: <input type="text" [(ngModel)]='filterBy'></h5>
               </div>         
           </div>     
       </div>
@@ -14,7 +14,7 @@
       <table class='table-responsive' style="max-height: 100%;margin: 10px;" *ngIf='_crimes'>
           <thead> 
               <tr>
-                  <th>Name:</th><th>Assualt count:</th>
+                  <th>Name:</th><th>Arrest count:</th>
               </tr>
           </thead>
           <tbody>

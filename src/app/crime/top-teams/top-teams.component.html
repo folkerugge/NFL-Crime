@@ -6,7 +6,7 @@
       <div class='card-body'>
           <div class='row'>
               <div class='col-md-2'> 
-                  <h5>Filter:<input type="text" [(ngModel)]='filterBy'></h5>
+                  <h5>Filter by team: <input type="text" [(ngModel)]='filterBy'></h5>
               </div>         
           </div>     
       </div>
@@ -14,12 +14,12 @@
       <table class='table-responsive' style="max-height: 100%;margin: 10px;" *ngIf='_crimes'>
           <thead> 
               <tr>
-                  <th>Category:</th><th>Assualt count:</th>
+                  <th>Team:</th><th>Team name:</th><th>Team city:</th><th>Arrest count:</th>
               </tr>
           </thead>
           <tbody>
               <tr *ngFor='let crime of _filteredCrimes'>
-                  <td>{{crime.Category}}</td><td>{{crime.arrest_count}}</td>
+                  <td>{{crime.Team}}</td><td>{{crime.Team_name}}</td><td>{{crime.Team_city}}</td><td>{{crime.arrest_count}}</td>
               </tr>
           </tbody>
       </table>
