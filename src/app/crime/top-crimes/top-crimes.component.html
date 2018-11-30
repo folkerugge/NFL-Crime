@@ -1,5 +1,27 @@
-<p>
-  top-crimes works!
+<div style="padding: 10px; font-family: sans-serif; font-size: 1.2em; font-weight: bold">
+  <div class='card' style="margin: 10px;max-height: 100%;overflow:auto">
+      <div class='card-header'>
+          Top Crimes
+      </div>
+      <div class='card-body'>
+          <div class='row'>
+              <div class='col-md-2'> 
+                  <h5>Filter:<input type="text" [(ngModel)]='filterBy'></h5>
+              </div>         
+          </div>     
+      </div>
 
-  {{_crimes}}
-</p>
+      <table class='table-responsive' style="max-height: 100%;margin: 10px;" *ngIf='_crimes'>
+          <thead> 
+              <tr>
+                  <th style="width: 300px">Category:</th><th style="width: 150px">Assualt count:</th>
+              </tr>
+          </thead>
+          <tbody> 
+              <tr *ngFor='let crime of _filteredCrimes'>
+                  <td>{{crime.Category}}</td><td style="align-items:center">{{crime.arrest_count}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

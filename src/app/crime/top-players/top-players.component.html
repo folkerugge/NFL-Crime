@@ -1,3 +1,27 @@
-<p>
-  top-players works!
-</p>
+<div style="padding: 10px; font-family: sans-serif; font-size: 1.2em; font-weight: bold">
+  <div class='card' style="margin: 10px;max-height: 100%;overflow:auto">
+      <div class='card-header'>
+          Top Players
+      </div>
+      <div class='card-body'>
+          <div class='row'>
+              <div class='col-md-2'> 
+                  <h5>Filter:<input type="text" [(ngModel)]='filterBy'></h5>
+              </div>         
+          </div>     
+      </div>
+
+      <table class='table-responsive' style="max-height: 100%;margin: 10px;" *ngIf='_crimes'>
+          <thead> 
+              <tr>
+                  <th>Name:</th><th>Assualt count:</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let crime of _filteredCrimes'>
+                  <td>{{crime.Name}}</td><td>{{crime.arrest_count}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
